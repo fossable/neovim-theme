@@ -11,6 +11,9 @@
      <script src="/js/tab.js"></script>
      <script src="/js/commands.js"></script>
      <script src="/js/config.js"></script>
+     {%- if config.extra.custom_script -%}
+     <script src="/js/custom_scripts.js"></script
+     {%- endif -%}
      <link rel="stylesheet" href="/css/base.css">
      <link rel="stylesheet" href="/css/intro.css">
      {%- if page -%}
