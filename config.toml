@@ -13,4 +13,4 @@ highlight_theme = "ayu-mirage"
 
 [extra]
 blog_name = "name"
-custom_script = false
+

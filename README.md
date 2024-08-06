@@ -27,12 +27,15 @@ You can setup the blog name with config file in extra
 blog_name = "name"
 ```
 
-## Custom JS
-You can add some custom commands/init function with this parameter
+## Customisation
+
+### JS
+
+You can add some custom javascript function with this parameter:
 
 ```toml
 [extra]
-custom_script = true
+custom_script = "<path>.js" 
 ```
 then you just add a file `static/js/custom_script.js` and define your custom functions like this:
 
@@ -46,4 +49,13 @@ function custom_commands(command, args){
 function custom_init(){
     ...
 }
+```
+
+### CSS
+
+And for css 
+
+```toml
+[extra]
+custom_css = "<path>.css"
 ```
