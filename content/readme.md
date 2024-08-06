@@ -31,8 +31,6 @@ title="README"
 
 `:help` to show this page
 
-`:showintro` replay the intro 
-
 `:q` exit website
 
 `:set mouse=true|false` to set the mouse (true=showed, false=hidden)
