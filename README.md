@@ -1,6 +1,24 @@
 # Neovim like theme 
 
+Neovim theme is a neovim like theme for zola.
+
 ![screenshot](./screenshot.png)
+
+exemple: [https://super-botman.github.io](https://super-botman.github.io)
+
+## Instalation
+```bash
+cd themes
+git clone https://github.com/Super-Botman/neovim-theme.git
+```
+
+then enable it in your config
+
+```toml
+theme = "neovim-theme"
+```
+
+## Config
 
 You can setup the blog name with config file in extra
 
@@ -9,13 +27,14 @@ You can setup the blog name with config file in extra
 blog_name = "name"
 ```
 
-And you can add some custom commands/init function with this parameter (default false)
+## Custom JS
+You can add some custom commands/init function with this parameter
 
 ```toml
 [extra]
 custom_script = true
 ```
-then you just add a file static/js/custom_script.js and define your custom functions like this:
+then you just add a file `static/js/custom_script.js` and define your custom functions like this:
 
 ```javascript
 // add special commands
