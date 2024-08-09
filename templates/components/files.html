@@ -12,7 +12,9 @@
   </li>
   {%- endfor -%}
 
-  {{- self::fs(root_section=root_section, tabindex=tabindex) -}}
+  {% if root_section.subsections %}
+    {{- self::fs(root_section=root_section, tabindex=tabindex) -}}
+  {% endif %}
 </ul>
 {% endblock %}
 
@@ -50,10 +52,12 @@
       {%- endfor -%}
 
       {% set subsections = s.subsections %}
-      {% for s in subsections -%}
-        {% set s = get_section(path=s) -%}
-        {{ self::fs(root_section=s, tabindex=tabindex, folder=True) }}
-      {% endfor -%}
+        {% if subsections %}
+        {% for s in subsections -%}
+          {% set s = get_section(path=s) -%}
+          {{ self::fs(root_section=s, tabindex=tabindex, folder=True) }}
+        {% endfor -%}
+      {% endif %}
     </ul>
   </li>
 {%- endfor -%}

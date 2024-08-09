@@ -37,6 +37,10 @@ body {
     }
   }
 
+  .files {
+    height: inherit;
+  }
+
   .section {
     margin-left: 3%;
     margin-right: 3%;
@@ -62,7 +66,7 @@ body {
   .files {
     position: sticky;
     top: 0;
-    width: 20%;
+    width: calc(20% - 10px);
     height: calc(100% - 58px);
 
     box-shadow: 3px 0px 0px 0px var(--font-color);
