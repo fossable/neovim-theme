@@ -87,6 +87,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   background-color: var(--bg-color);
 
   ul {
@@ -191,28 +192,30 @@ main {
     text-wrap: nowrap;
     overflow-x: scroll;
     -ms-overflow-style: none;
+    padding-left: 10px;
+    padding-top: 10px;
 
-    ul {
+    ul:not(:empty) {
+      padding-left: 0.2em;
+      margin: 0;
+    }
+
+    span {
       padding: 0;
+      margin: 0;
+    }
 
-      li {
-        padding-left: 1em;
-        margin-top: 3px;
+    li {
+      padding-left: 0;
+      margin: 0;
+    }
 
-        a {
-          color: var(--font-color);
-        }
+    li>ul>.file {
+      padding-left: 2.5em;
+    }
 
-        .file,
-        .subfolder {
-          margin-top: 0;
-          padding: 0px;
-        }
-
-        .subfolder>ul {
-          padding-left: 2.5em;
-        }
-      }
+    a {
+      color: var(--font-color);
     }
   }
 
