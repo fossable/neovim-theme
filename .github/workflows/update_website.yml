@@ -9,12 +9,15 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - uses: actions/checkout@v4
         with:
           repository: Super-Botman/Super-Botman.github.io
           token: ${{ secrets.PRIVATE_TOKEN_GITHUB }}
+          persist-credentials: false
           submodules: recursive
           
       - name: Update submodules
