@@ -34,6 +34,6 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          github_token: Super-Botman/Super-Botman.github.io
-          repository: ${{ env.PARENT_REPO }}
+          github_token: ${{ secrets.PRIVATE_TOKEN_GITHUB }}
+          repository: Super-Botman/Super-Botman.github.io
           branch: main
