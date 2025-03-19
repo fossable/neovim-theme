@@ -18,7 +18,7 @@ async function init() {
   await exec_config();
 
   if (typeof custom_init != "undefined" && typeof custom_init === "function") {
-    await custom_init(command, args);
+    await custom_init();
   }
 
   document.getElementById(Cookies.get("focused")).focus();
