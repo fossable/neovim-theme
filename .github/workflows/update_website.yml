@@ -15,9 +15,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          repository: Super-Botman/Super-Botman.github.io
+          repository: ${{ env.PARENT_REPO }}
           token: ${{ secrets.PRIVATE_TOKEN_GITHUB }}
-          persist-credentials: false
           submodules: recursive
           
       - name: Update submodules
@@ -35,5 +34,6 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.PRIVATE_TOKEN_GITHUB }}
+          github_token: ${{ secrets.PRIVATE_TOKEN_GITHUB }
+          repository: ${{ env.PARENT_REPO }}
           branch: main
