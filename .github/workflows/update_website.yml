@@ -19,11 +19,7 @@ jobs:
           
       - name: Update submodules
         id: update
-        run: git submodule update --remote --recursive 
-        
-      - name: Run git status
-        id: status
-        run: echo "::set-output name=status::$(git status -s)"
+        run: git submodule update --remote --recursive
         
       - name: Add and commit files
         run: |
@@ -36,4 +32,4 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.PRIVATE_TOKEN_GITHUB }}
-          branch: dev
+          branch: main
