@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: ${{ env.PARENT_REPO }}
+          repository: Super-Botman/Super-Botman.github.io
           token: ${{ secrets.PRIVATE_TOKEN_GITHUB }}
           submodules: recursive
 
