@@ -31,11 +31,9 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git commit -m "Update submodules at $(date "+DATE: %Y-%m-%d TIME: %H:%M:%S")"
-        if: ${{ steps.status.outputs.status }}
         
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.PRIVATE_TOKEN_GITHUB }}
           branch: dev
-        if: ${{ steps.status.outputs.status && github.event_name == 'push' }}
