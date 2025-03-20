@@ -13,7 +13,7 @@ function exec(event) {
 
   if (event.shiftKey) {
     if (
-      typeof keys != "undefined" &&
+      typeof keys.shortcut != "undefined" &&
       typeof keys.shortcut[key] === "function"
     ) {
       keys.shortcut[key](event, element);
@@ -40,7 +40,10 @@ function exec(event) {
         break;
     }
   } else {
-    if (typeof keys != "undefined" && typeof keys.normal[key] === "function") {
+    if (
+      typeof keys.normal != "undefined" &&
+      typeof keys.normal[key] === "function"
+    ) {
       keys.normal[key](event, element);
       return;
     }
