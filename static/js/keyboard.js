@@ -46,7 +46,7 @@ function exec(event) {
     }
 
     switch (key) {
-      case "esc":
+      case "escape":
         document.getElementById("setter").focus();
         document.getElementById("setter").value = "";
         break;
