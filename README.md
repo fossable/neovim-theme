@@ -10,6 +10,7 @@ exemple: [https://super-botman.github.io](https://super-botman.github.io)
 ```bash
 cd themes
 git clone https://github.com/Super-Botman/neovim-theme.git
+mv neovim-theme/content/readme.md ../content
 ```
 
 then enable it in your config
