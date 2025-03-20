@@ -7,10 +7,10 @@ function command() {
   const args = input.join("").replace(" ", "").split("=");
 
   if (
-    typeof custom_command != "undefined" &&
-    typeof custom_command === "function"
+    typeof commands != "undefined" &&
+    typeof commands[command] === "function"
   ) {
-    custom_command(command);
+    commands[command](command);
   }
 
   switch (command) {

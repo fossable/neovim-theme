@@ -1,39 +1,22 @@
-const keys_table = {
-  9: "tab",
-  13: "enter",
-  17: "ctrl",
-  27: "esc",
-  32: "space",
-  72: "h",
-  74: "j",
-  75: "k",
-  76: "l",
-  81: "q",
-  84: "t",
-  87: "w",
-};
-
 function exec(event) {
   let element = document.activeElement;
 
-  const keycode = event.keyCode || event.which;
-  const key = keys_table[keycode];
+  const key = event.key.toLocaleLowerCase();
   const is_page = element.classList.contains("page");
   const is_viewer = element.id == "viewer";
   const is_files = element.id == "files";
   const is_prompt = element.id == "setter";
 
-  if (key && (is_viewer || is_files)) event.preventDefault();
+  if (key != "r" && (is_viewer || is_files)) event.preventDefault();
 
   element = is_viewer ? document.getElementById("content") : element;
 
   if (event.shiftKey) {
     if (
       typeof keys != "undefined" &&
-      typeof keys === "function" &&
-      key in Object.keys(keys.shortcut)
+      typeof keys.shortcut[key] === "function"
     ) {
-      keys.shortcut[key]();
+      keys.shortcut[key](event, element);
       return;
     }
 
@@ -57,12 +40,8 @@ function exec(event) {
         break;
     }
   } else {
-    if (
-      typeof keys != "undefined" &&
-      typeof keys === "function" &&
-      key in Object.keys(keys.normal)
-    ) {
-      keys.normal[key]();
+    if (typeof keys != "undefined" && typeof keys.normal[key] === "function") {
+      keys.normal[key](event, element);
       return;
     }
 

@@ -42,7 +42,7 @@ const keys = {
   // "normal" keys are just keys typed on the page
   // for exemple " " is when space is typed
   normal: {
-    " ": (element) => {
+    " ": (event, element) => {
       alert("u pressed space key");
     },
   },
