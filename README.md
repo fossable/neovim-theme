@@ -6,7 +6,7 @@ Neovim theme is a neovim like theme for zola.
 
 exemple: [https://super-botman.github.io](https://super-botman.github.io)
 
-## Instalation
+## Installation
 ```bash
 cd themes
 git clone https://github.com/Super-Botman/neovim-theme.git
