@@ -6,10 +6,10 @@ title="README"
 
 ## Table of content
 
-* [1. Shotcuts](#shotcuts)
+* [1. Shortcuts](#shortcuts)
 * [2. Commands](#commands)
 
-## Shotcuts
+## Shortcuts
 
 `shift+h/l` to switch from file browser to file viewer 
 

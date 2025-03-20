@@ -1,4 +1,4 @@
-const keys = {
+const keys_table = {
   9: "tab",
   13: "enter",
   17: "ctrl",
@@ -14,11 +14,10 @@ const keys = {
 };
 
 function exec(event) {
-  event = event || window.event;
   let element = document.activeElement;
 
   const keycode = event.keyCode || event.which;
-  const key = keys[keycode];
+  const key = keys_table[keycode];
   const is_page = element.classList.contains("page");
   const is_viewer = element.id == "viewer";
   const is_files = element.id == "files";
@@ -28,7 +27,16 @@ function exec(event) {
 
   element = is_viewer ? document.getElementById("content") : element;
 
-  if (window.event.shiftKey) {
+  if (event.shiftKey) {
+    if (
+      typeof keys != "undefined" &&
+      typeof keys === "function" &&
+      key in Object.keys(keys.shortcut)
+    ) {
+      keys.shortcut[key]();
+      return;
+    }
+
     switch (key) {
       case "l":
         document.getElementById("viewer").focus();
@@ -49,18 +57,19 @@ function exec(event) {
         break;
     }
   } else {
+    if (
+      typeof keys != "undefined" &&
+      typeof keys === "function" &&
+      key in Object.keys(keys.normal)
+    ) {
+      keys.normal[key]();
+      return;
+    }
+
     switch (key) {
       case "esc":
         document.getElementById("setter").focus();
         document.getElementById("setter").value = "";
-        break;
-
-      case "space":
-        element = document.getElementById("intro");
-        if (element) {
-          window.location.href = "/readme";
-          Cookies.set("intro", "");
-        }
         break;
 
       case "enter":

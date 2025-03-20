@@ -19,7 +19,6 @@ function writeit(from, event) {
 }
 
 function moveIt(count, event) {
-  event = event || window.event;
   let keycode = event.keyCode || event.which;
 
   cursor.style.display = count == 0 ? "none" : "block";

@@ -18,44 +18,52 @@ then enable it in your config
 theme = "neovim-theme"
 ```
 
-## Config
-
-You can setup the blog name with config file in extra
+## Configuration
 
 ```toml
 [extra]
+# set the name of the blog
 blog_name = "name"
+
+# set the background image u want
+background-image = "assets/background.jpg"
+
+# this parameter allow you to configure specific init functions/shortcuts and commands
+# the value has to be the path of you're config.js file
+config_js = "config.js"
+
+# allow you to include custom css into u're blog
+custom_css = "style.css"
 ```
 
-## Customisation
+```js
+const keys = {
+  // "normal" keys are just keys typed on the page
+  // for exemple " " is when space is typed
+  normal: {
+    " ": (element) => {
+      alert("u pressed space key");
+    },
+  },
 
-### JS
+  // this is for keys when shift is pressed
+  shortcut: {},
+};
 
-You can add some custom javascript function with this parameter:
+const commands = {
+  // the key is used to specify the name of the command
+  test: (command) => {
+    alert("you entered 'test' command");
 
-```toml
-[extra]
-custom_script = "<path>.js" 
-```
-then you just add a file `static/js/custom_script.js` and define your custom functions like this:
+    // and then the return value with type and message
+    return {
+      type: "success", // "success" = green text, "error" = red text
+      message: "command executed", // the text to show in the command line
+    };
+  },
+};
 
-```javascript
-// add special commands
-function custom_commands(command, args){
-   ...
+function custom_init() {
+  // here some code
 }
-
-// add special init routine
-function custom_init(){
-    ...
-}
-```
-
-### CSS
-
-And for css 
-
-```toml
-[extra]
-custom_css = "<path>.css"
 ```

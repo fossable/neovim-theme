@@ -17,9 +17,9 @@ async function init() {
   await render_tabs();
   await exec_config();
 
+  document.getElementById(Cookies.get("focused")).focus();
+
   if (typeof custom_init != "undefined" && typeof custom_init === "function") {
     await custom_init();
   }
-
-  document.getElementById(Cookies.get("focused")).focus();
 }
