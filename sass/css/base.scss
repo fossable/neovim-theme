@@ -94,18 +94,20 @@ main {
   background-color: var(--bg-color);
   backdrop-filter: blur(20px);
 
-  ul {
-    list-style-type: none;
+  .files {
+    ul {
+      list-style-type: none;
 
-    a {
-      color: var(--font-color);
-      text-decoration: none;
-      display: inline;
-    }
+      a {
+        color: var(--font-color);
+        text-decoration: none;
+        display: inline;
+      }
 
-    a:hover,
-    .selected {
-      background-color: rgba(66, 135, 245, 0.5);
+      a:hover,
+      .selected {
+        background-color: rgba(66, 135, 245, 0.5);
+      }
     }
   }
 
