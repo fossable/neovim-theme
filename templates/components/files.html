@@ -3,7 +3,8 @@
   {%- set root_section = get_section(path="_index.md") -%}
   {% set_global tabindex = -1 %}
 
-  {%- for p in root_section.pages %}
+  {% set pages = root_section.pages | sort(attribute="title")%}
+  {%- for p in pages %}
   {%- set_global tabindex = tabindex - 1 -%}
   <li class="file">
     <span><a {% if page and p == page -%}class="selected"{%- endif -%}
@@ -23,7 +24,8 @@
 
 {% if root_section.subsections %}
 
-{%- for s in root_section.subsections -%}
+{% set subsections = root_section.subsections | sort(attribute="") %}
+{%- for s in subsections -%}
   {%- set s = get_section(path=s) -%}
 
   {%- if folder -%}
@@ -40,7 +42,8 @@
     </span>
 
     <ul>
-      {% for p in s.pages -%}
+      {% set pages = s.pages | sort(attribute="title")%}
+      {% for p in pages -%}
       <li class="file">
         <span>└──
           {%- set_global tabindex = tabindex - 1 %}
@@ -51,7 +54,7 @@
       </li>
       {%- endfor -%}
 
-      {% set subsections = s.subsections %}
+      {% set subsections = s.subsections | sort(attribute="") %}
         {% if subsections %}
         {% for s in subsections -%}
           {% set s = get_section(path=s) -%}
@@ -76,7 +79,9 @@
 
 
   <ul>
-  {% for p in root_section.pages -%}
+
+  {% set pages = root_section.pages | sort(attribute="title")%}
+  {% for p in pages -%}
   <li class="file">
     <span>└──
       {%- set_global tabindex = tabindex - 1 %}

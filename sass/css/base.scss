@@ -4,7 +4,7 @@
 }
 
 :root {
-  --bg-color: #1a1b26e0;
+  --bg-color: rgba(32, 32, 42, 0.8);
   --font-color: #cdd6f4;
 }
 
@@ -22,7 +22,6 @@ html {
 body {
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
   margin: 0;
 }
 
@@ -73,18 +72,12 @@ body {
   }
 }
 
-header>h1 {
-  margin: 0;
-  padding: 10px;
-  text-align: center;
-  background-color: transparent;
-}
-
 main {
   overflow: clip;
-  height: 90%;
-  width: 95%;
-  margin-left: 2.5%;
+  height: 98vh;
+  width: 98vw;
+  margin-top: 1vh;
+  margin-left: 1vw;
   border-radius: 20px;
   position: relative;
   display: flex;
@@ -92,7 +85,7 @@ main {
   justify-content: space-between;
 
   background-color: var(--bg-color);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(5px);
 
   .files {
     ul {
@@ -103,11 +96,11 @@ main {
         text-decoration: none;
         display: inline;
       }
+    }
 
-      a:hover,
-      .selected {
-        background-color: rgba(66, 135, 245, 0.5);
-      }
+    a:hover,
+    .selected {
+      background-color: rgba(66, 135, 245, 0.5) !important;
     }
   }
 
@@ -121,10 +114,57 @@ main {
       overflow-y: scroll;
       margin-top: 3px;
 
+      a:hover,
+      .selected {
+        background-color: rgba(66, 135, 245, 0.5) !important;
+      }
+
       img {
         max-width: 90%;
         max-height: 20%;
         margin-right: 100vw;
+      }
+
+      pre {
+        background-color: var(--bg-color) !important;
+        padding: 10px;
+        width: calc(100% - 40px);
+      }
+
+      ul.section a,
+      ul.section li,
+      ul.section a::before {
+        color: var(--font-color);
+        text-decoration: none;
+        list-style-type: none;
+        content: ' ';
+      }
+
+      li.section a::before {
+        content: ' ';
+      }
+
+      h1,
+      a,
+      a::before {
+        color: #82aaff;
+        content: '󰌹 ';
+      }
+
+      h1::before {
+        content: '󰲡 ';
+      }
+
+      h2,
+      h2::before {
+        color: #ffc777;
+        content: ' 󰲣 ';
+      }
+
+      h3,
+      h3::before {
+        color: #c3e88d;
+        content: '  󰲥 ';
       }
     }
 
@@ -173,6 +213,7 @@ main {
           white-space: nowrap;
           width: 50px;
           display: block;
+          color: white;
         }
 
         li {
@@ -186,12 +227,6 @@ main {
 
     .section {
       padding: 0px;
-
-      .section {
-        a {
-          color: rgba(66, 135, 245, 1);
-        }
-      }
     }
   }
 

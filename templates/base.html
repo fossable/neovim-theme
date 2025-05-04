@@ -27,13 +27,12 @@
 </head>
 
 {%- if config.extra.background_image -%}
+
 <body onkeydown="exec(event)" style="background-image: {{ config.extra.background_image }}; ">
-{%- else -%}
-<body onkeydown='exec(event)' style='background-image: url("/assets/background.jpg");'>
-{%- endif -%}
-    <header>
-      <h1>{{ config.extra.blog_name }}</h1>
-    </header>
+  {%- else -%}
+
+  <body onkeydown='exec(event)' style='background-image: url("/assets/background.jpg");'>
+    {%- endif -%}
     <main>
       <div class="files" id="files" tabindex="0">
         {%- include "components/files.html" -%}
