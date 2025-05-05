@@ -2,7 +2,7 @@
 
 Neovim theme is a neovim like theme for zola.
 
-![screenshot](./screenshot.png)
+![image](https://github.com/user-attachments/assets/0317c951-4975-4150-ac43-7faf4c57aa8b)
 
 exemple: [https://super-botman.github.io](https://super-botman.github.io)
 
