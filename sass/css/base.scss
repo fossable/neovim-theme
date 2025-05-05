@@ -106,6 +106,7 @@ main {
 
   .viewer {
     height: calc(100% - 58px);
+    width: calc(100vw - 30px);
     overflow: clip;
 
     .content {
