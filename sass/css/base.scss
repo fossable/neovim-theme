@@ -172,6 +172,7 @@ main {
         width: calc(100% - 40px);
       }
 
+      code, 
       blockquote {
         background-color: var(--bg-color) !important;
         width: calc(100% - 50px);
@@ -179,6 +180,18 @@ main {
         margin-left: 0px;
         height: fit-content;
         position: relative;
+      }
+
+      pre>code{
+        background-color: transparent !important;
+        color: var(--font-color);
+      }
+
+      code {
+        font-size: 1.2em;
+        padding: 0.2em;
+        background-color: #b7c2fd40 !important;
+        color: #b7c2fd;
       }
       
       blockquote::before {
