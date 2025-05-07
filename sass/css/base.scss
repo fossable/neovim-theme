@@ -17,6 +17,8 @@
 html {
   color: var(--font-color);
   font-family: JetBrainsMono;
+  height: 100vh;
+  width: 100vw;
 }
 
 body {
@@ -28,15 +30,34 @@ body {
 @media only screen and (max-width: 768px) {
   .viewer {
     position: relative;
+    overflow: scroll !important;
+    height: fit-content !important;
 
     .tab>ul {
-      margin-top: 3px !important;
+      margin-top: 0px !important;
       margin-left: 0px !important;
     }
-  }
 
-  .files {
-    height: inherit;
+    .tab {
+      height: 1.8em !important;
+      box-shadow: 0px 3px 0px 0px var(--font-color) !important;
+      position: relative;
+    }
+    .tab>ul>li>a {
+      align-content: center;
+    }
+
+    .file-manager {
+      right: 0;
+      top: 0;
+      bottom: 0;
+      position: absolute;
+      width: 2em;
+      padding-left: 0.5em;
+      box-shadow: -3px 0px 0px 0px var(--font-color);
+      align-content: center;
+      cursor: pointer;
+    }
   }
 
   .section {
@@ -50,7 +71,21 @@ body {
   }
 
   .files {
-    box-shadow: 0px 3px 0px 0px var(--font-color);
+    display: none;
+    box-shadow: 0px 3px 0px 0px var(--font-color) !important;
+  }
+
+  .close {
+    display: none;
+  }
+
+  .open {
+    display: block;
+    height: 100%;
+  }
+
+  .prompt {
+    display: none !important;
   }
 }
 
@@ -69,6 +104,10 @@ body {
 
     box-shadow: 3px 0px 0px 0px var(--font-color);
     overflow-x: scroll;
+  }
+  
+  .file-manager {
+    display: none;
   }
 }
 
@@ -109,9 +148,11 @@ main {
     overflow: clip;
 
     .content {
+      text-wrap: balance;
       padding-left: 20px;
       height: calc(100% - 23px);
       overflow-y: scroll;
+      overflow-x: clip;
       margin-top: 3px;
 
       a:hover,
@@ -125,10 +166,30 @@ main {
         margin-right: 100vw;
       }
 
-      pre {
+      pre{
         background-color: var(--bg-color) !important;
         padding: 10px;
         width: calc(100% - 40px);
+      }
+
+      blockquote {
+        background-color: var(--bg-color) !important;
+        width: calc(100% - 50px);
+        padding: 0.2em 1em 0.2em 1em;
+        margin-left: 0px;
+        height: fit-content;
+        position: relative;
+      }
+      
+      blockquote::before {
+        background-color: #82aaff;
+        width: 3.5px;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        content: '';
       }
 
       ul.section a,
