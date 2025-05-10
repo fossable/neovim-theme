@@ -23,8 +23,15 @@ theme = "neovim-theme"
 
 ```toml
 [extra]
+######################
+# Mandatory settings #
+######################
 # set the name of the blog
 blog_name = "name"
+
+#####################
+# Optional settings #
+#####################
 
 # set the background image u want
 background-image = "assets/background.jpg"
