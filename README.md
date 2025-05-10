@@ -26,6 +26,7 @@ theme = "neovim-theme"
 ######################
 # Mandatory settings #
 ######################
+
 # set the name of the blog
 blog_name = "name"
 
