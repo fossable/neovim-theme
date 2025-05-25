@@ -28,10 +28,10 @@
 
 {%- if config.extra.background_image -%}
 
-<body onkeydown="exec(event)" style="background-image: {{ config.extra.background_image }}; ">
+<body onkeydown="exec(event)">
   {%- else -%}
 
-  <body onkeydown='exec(event)' style='background-image: url("/assets/background.jpg");'>
+  <body onkeydown='exec(event)'>
     {%- endif -%}
     <main>
       <div class="files" id="files" tabindex="0">
